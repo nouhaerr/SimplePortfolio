@@ -1,0 +1,120 @@
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* height: 100vh; /* Full viewport height */
+    height: calc(100vh - 60px); /*Reduced height to avoid too much space at the top*/
+    /* background-color: #f4f4f4; */
+    background: linear-gradient(to right, #131415, #433f38, #645f55);
+    padding: 50px;
+    overflow: hidden; /* Prevents overflow */
+  }
+  
+  .contact-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    overflow-y: auto; /* Ensures scroll if content overflows */
+    box-sizing: border-box;
+  }
+  
+  .contact-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #433f38;
+  }
+  
+  .contact-form .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align labels to the left */
+  }
+  
+  .contact-form label {
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+    padding-left: 3%;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin: 0 auto; /* Keeps input centered */
+    outline: none;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #754b0d;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+  }
+  
+  .submit-btn {
+    display: block;
+    margin: 20px auto; /* Centers the button horizontally */
+    background-color: #433f38;
+    /* background: linear-gradient(to right, #131415, #433f38, #645f55); */
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    width: 80%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #6b5c45;
+  }
+
+/* Ensure footer doesn't overlap */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+main {
+  min-height: calc(100vh - 100px); /* Adjust for footer height */
+}
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contact-container {
+      padding: 20px;
+    }
+  
+    .contact-title {
+      font-size: 1.8rem;
+    }
+  
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 0.9rem;
+    }
+  
+    .submit-btn {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+  
