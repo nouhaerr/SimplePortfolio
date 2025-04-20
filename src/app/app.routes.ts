@@ -8,7 +8,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { TimelineComponent } from './pages/timeline/timeline.component';
 
 export const routes: Routes = [
-  { path: '', component: LandingComponent },
+  { path: '', loadComponent: () => import('./pages/landing/landing.component').then(m => m.LandingComponent) },
+  // { path: '', component: LandingComponent },
   { path: 'about', loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent) },
   { path: 'projects', loadComponent: () => import('./pages/projects/projects.component').then(m => m.ProjectsComponent) },
   { path: 'contact', loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent) },
