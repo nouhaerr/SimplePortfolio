@@ -1,1 +1,41 @@
-<p>timeline works!</p>
+<div class="timeline-container">
+    <div class="button-group">
+      <button (click)="showSection('studies')" [class.active]="currentSection === 'studies'">Studies</button>
+      <button (click)="showSection('experiences')" [class.active]="currentSection === 'experiences'">Experiences</button>
+    </div>
+  
+    <div *ngIf="currentSection === 'studies'" class="timeline">
+      <div class="timeline-item">
+        <h3>1337 SCHOOL, UM6P</h3>
+        <p><strong>Student | IT Architect</strong></p>
+        <p>2022 - In Progress | Ben Guerir, Morocco</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Faculty of Science and Technology (FST)</h3>
+        <p><strong>Bachelor of Computer Engineering</strong></p>
+        <p>2018 - 2023 | Settat, Morocco</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Jaafar El Fassi El Fihri High School</h3>
+        <p><strong>Baccalaureate | Physical Science, French Option</strong></p>
+        <p>2017 - 2018 | Casablanca, Morocco</p>
+      </div>
+    </div>
+  
+    <div *ngIf="currentSection === 'experiences'" class="timeline">
+      <div class="timeline-item">
+        <h3>RGPH 2024 (General Population and Housing Census)</h3>
+        <p><strong>Data Collector</strong></p>
+        <p>August 2024 - September 2024 | Casablanca, Morocco</p>
+        <p>• Collected detailed household data using digital tools.<br>
+           • Collaborated to ensure timely and accurate reporting.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>BC SKILLS Group</h3>
+        <p><strong>Internship: Full-Stack Developer</strong></p>
+        <p>April 2022 - June 2022 | Safi, Morocco</p>
+        <p>• Developed a clean, functional web app for inventory, sales, and purchasing using HTML, CSS, JS, and PHP.</p>
+      </div>
+    </div>
+  </div>
+  
