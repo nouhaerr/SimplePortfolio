@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel
-import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Add FormsModule here
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
@@ -14,25 +14,33 @@ export class ContactComponent {
   name: string = '';
   email: string = '';
   message: string = '';
+  isSending: boolean = false;
+  submitted: boolean = false;
 
-  constructor(private http: HttpClient) {} // ✅ Inject HttpClient
-  onSubmit() {
-    const contactData = {
+  constructor() {}
+
+  onSubmit(form: any) {
+    this.submitted = true;
+    if (form.invalid) return;
+
+    this.isSending = true;
+
+    const templateParams = {
       name: this.name,
       email: this.email,
       message: this.message
     };
-    this.http.post('http://localhost:8080/api/contact', contactData).subscribe({
-      next: () => {
-        alert('Message sent successfully!');
-        this.name = '';
-        this.email = '';
-        this.message = '';
-      },
-      error: (err) => {
-        console.error('Error sending message', err);
-        alert('Failed to send message.');
-      }
-    });
+
+    emailjs.send('service_d1f11ri', 'template_i59wgb5', templateParams, 'IrxJf5-iSUPyglRiA')
+      .then(() => {
+        alert('✅ Message sent successfully!');
+        form.resetForm();
+        this.submitted = false;
+        this.isSending = false;
+      }, (error) => {
+        console.error('FAILED...', error);
+        alert('❌ Failed to send message.');
+        this.isSending = false;
+      });
   }
 }

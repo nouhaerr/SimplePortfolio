@@ -97,6 +97,18 @@ main {
   min-height: calc(100vh - 100px); /* Adjust for footer height */
 }
 
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  margin-left: 3%;
+}
+
+input.invalid,
+textarea.invalid {
+  border: 1px solid red;
+}
+
   /* Responsive */
   @media (max-width: 768px) {
     .contact-container {
