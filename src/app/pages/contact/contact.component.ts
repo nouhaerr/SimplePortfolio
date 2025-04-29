@@ -36,20 +36,3 @@ export class ContactComponent {
     });
   }
 }
-// export class ContactComponent {
-//   name: string = '';
-//   email: string = '';
-//   message: string = '';
-
-//   onSubmit() {
-//     console.log('Form submitted:', { name: this.name, email: this.email, message: this.message });
-//     // Here you can add logic to send the form data to a server or email service.
-    
-//     alert('Thank you for reaching out!');
-    
-//     // Clear the form fields after submission
-//     this.name = '';
-//     this.email = '';
-//     this.message = '';
-//   }
-// }
