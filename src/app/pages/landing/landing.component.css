@@ -1,41 +1,140 @@
+/* Updated CSS with Animated Gradient Motto */
 .landing {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 100px); /* minus footer height */
-  text-align: center;
+  min-height: calc(100vh - 100px);
   background: linear-gradient(to right, #131415, #433f38, #645f55);
   animation: gradientBG 15s ease infinite;
   color: white;
-  padding: 20px;
+  /* padding: 20px; */
+  display: flex;
+  padding-top: 4rem;
+  flex-direction: column;
+  /* align-items: center;
+   */
+   align-items: flex-start; /* au lieu de center */
+
+}
+
+.landing .container-fluid {
+  max-width: 1200px;
+}
+
+.landing .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.landing .col-8 {
+  text-align: left;
+  padding-right: 2rem;
+}
+
+.landing .col-4 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 0;
 }
 
 .landing h1 {
-  margin-top: -5rem;
   font-size: 3rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   animation: fadeSlide 1.2s ease forwards;
-  animation-delay: 0.1s; /* appear almost immediately */
+  animation-delay: 0.1s;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-.subtitle {
-  font-size: 2.2rem;
-  color: #e0e0e0;
+.motto {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeSlide 1.2s ease forwards;
-  animation-delay: 0.3s; /* small delay after h1 */
+  animation-delay: 0.3s;
+  position: relative;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.motto-line {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(-45deg, #eacf46, #f4d03f, #e67e22, #eacf46, #d4af37);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Glow effect behind the text */
+.motto-line::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(-45deg, #eacf46, #f4d03f, #e67e22, #eacf46, #d4af37);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(8px);
+  opacity: 0.6;
+  z-index: -1;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+/* Alternative glow using box-shadow approach */
+.motto-glow {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: linear-gradient(-45deg, #4f370d, #f4d03f, #8c5e17, #4f370d);
+  /* background: linear-gradient(-45deg, #eacf46, #f4d03f, #e67e22, #eacf46); */
+  background-size: 400% 400%;
+  border-radius: 20px;
+  z-index: -1;
+  filter: blur(20px);
+  opacity: 0.3;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  25% { 
+    background-position: 100% 0%; 
+  }
+  50% { 
+    background-position: 100% 100%; 
+  }
+  75% { 
+    background-position: 0% 100%; 
+  }
+}
+
+/* Keep your existing highlight class but make it work with gradient */
+.highlight {
+  color: inherit; /* This will inherit the gradient */
+  font-weight: 700;
+  position: relative;
 }
 
 .landing p {
   font-size: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   color: #d0d0d0;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeSlide 1.2s ease forwards;
-  animation-delay: 0.5s; /* comes right after subtitle */
+  animation-delay: 0.5s;
 }
 
 .buttons {
@@ -45,7 +144,28 @@
   opacity: 0;
   transform: translateY(20px);
   animation: fadeSlide 1.2s ease forwards;
-  animation-delay: 0.7s; /* buttons appear shortly after everything */
+  animation-delay: 0.7s;
+  margin-bottom: 2rem;
+  justify-content: flex-start;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.profile {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(234, 207, 70, 0.3);
+  opacity: 0;
+  transform: scale(0.8);
+  animation: profileAppear 1.2s ease forwards;
+  animation-delay: 0.4s;
 }
 
 @keyframes fadeSlide {
@@ -54,6 +174,14 @@
     transform: translateY(0);
   }
 }
+
+@keyframes profileAppear {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .cta-button, .secondary-button {
   padding: 0.8rem 1.5rem;
   border: 2px solid #eacf46;
@@ -62,43 +190,18 @@
   cursor: pointer;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .secondary-button {
   background-color: transparent;
-  border: 2px solid #eacf46;
-  color: white;
 }
 
 .cta-button:hover, .secondary-button:hover {
   background-color: #eacf46;
   color: #4f370d;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .landing h1 {
-    font-size: 2.5rem;
-  }
-  
-  .subtitle {
-    font-size: 1.8rem;
-  }
-  
-  .landing p {
-    font-size: 1.6rem;
-  }
-}
-
-.social-buttons {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1.5rem;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeSlide 1.2s ease forwards;
-  animation-delay: 0.8s; /* buttons appear shortly after everything */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(234, 207, 70, 0.4);
 }
 
 .social-link {
@@ -106,10 +209,93 @@
   font-weight: bold;
   text-decoration: none;
   font-size: 1.4rem;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .social-link:hover {
   color: #ffffff;
+  transform: translateY(-3px);
 }
 
+.social-link svg {
+  transition: all 0.3s ease;
+}
+
+.social-link:hover svg {
+  filter: drop-shadow(0 0 8px #eacf46);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .landing {
+      min-height: auto;
+      padding-top: 2rem;
+      padding-bottom: 5rem;
+  }
+  
+  .landing .row {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  
+  .landing .col-7, .landing .col-4 {
+    text-align: center !important;
+    padding: 1rem;
+  }
+  .landing .col-1 {
+    /* position: relative; nécessaire pour z-index */
+    /* z-index: 10; */
+    width: 100% !important; /* occuper toute la largeur */
+    flex-direction: row !important;
+    justify-content: center !important;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+  
+  .landing .col-7 {
+    padding-right: 1rem;
+  }
+
+  .landing .col-4 {
+    /* width: 100% !important; */
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .motto-line {
+    text-align: center !important;
+    font-size: 2rem;
+  }
+  
+  .landing .col-7 p {
+    text-align: center !important;
+    font-size: 1.6rem;
+  } 
+  
+  .buttons {
+    justify-content: center !important;
+  }
+  
+  .social-buttons {
+    flex-direction: row !important;
+    justify-content: center !important;
+    margin-top: 1rem;
+    gap: 1.5rem;
+  }
+  
+  .profile {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+  }
+  
+  .landing h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .motto {
+    margin-top: 2rem; /* ou 0 */
+  }
+}

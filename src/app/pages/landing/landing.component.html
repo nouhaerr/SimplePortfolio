@@ -1,30 +1,38 @@
-<!-- <section class="landing">
-  <h1>Hi, I'm Nouhaila 👩‍💻</h1>
-  <p>Web Developer & Creative Engineer</p>
-  <a [routerLink]="['/projects']" class="cta-button">View My Work</a>
-</section> -->
-
-<!-- <section class="landing">
-  <h1>Hi, I'm Nouhaila 👩‍💻</h1>
-  <span class="animated-subtitle">Passionate about clean code & elegant design</span>
-  <p>Web Developer & Creative Engineer</p>
-  <div class="buttons">
-    <a [routerLink]="['/projects']" class="cta-button">View My Work</a>
-    <a [routerLink]="['/about']" class="secondary-button">Learn About Me</a>
-  </div>
-</section> -->
-
 <section class="landing">
-  <h1>Hi, I'm Nouhaila 👩‍💻</h1>
-  <p class="subtitle">Passionate about clean code & elegant design</p>
-  <p>Web Developer & Creative Engineer</p>
-  <div class="buttons">
-    <a [routerLink]="['/projects']" class="cta-button">View My Work</a>
-    <a [routerLink]="['/about']" class="secondary-button">Learn About Me</a>
-  </div>
-  <div class="social-buttons">
-    <a href="https://www.linkedin.com/in/nouhailaerrakeb" target="_blank" class="social-link">LinkedIn</a>
-    <a href="https://github.com/nouhaerr" target="_blank" class="social-link">GitHub</a>
+  <div class="container-fluid">
+    <div class="motto">
+      <div class="motto-glow"></div>
+      <p class="motto-line" [attr.data-text]="mottoText">
+        Code with purpose. Design with passion
+      </p>
+    </div>
+    <div class="row align-items-center h-100">
+      <div class="col-1 d-flex flex-column align-items-center">
+        <div class="social-buttons">
+          <a href="https://www.linkedin.com/in/nouhailaerrakeb" target="_blank" class="linkedin social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="32" height="32" fill="currentColor">
+              <path d="M100.28 448H7.4V148.9h92.88zm-46.44-344C24.17 104 0 79.8 0 50.2 0 22.3 22.5 0 50.4 0s50.4 22.3 50.4 50.2c0 29.6-24.1 53.8-50.4 53.8zM447.9 448h-92.68V302.4c0-34.7-12.4-58.4-43.5-58.4-23.7 0-37.7 15.9-43.8 31.3-2.3 5.6-2.9 13.3-2.9 21.1V448h-92.7s1.2-273.3 0-301.1h92.7v42.7c12.3-19 34.4-46 83.7-46 61 0 106.7 39.8 106.7 125.4V448z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/nouhaerr" target="_blank" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+              <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.84 10.91.57.11.78-.25.78-.55v-2.05c-3.19.7-3.86-1.54-3.86-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.74 2.68 1.23 3.34.94.1-.73.4-1.23.72-1.51-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.47.11-3.07 0 0 .96-.31 3.15 1.18a10.96 10.96 0 012.87-.39c.97 0 1.95.13 2.87.39 2.19-1.49 3.15-1.18 3.15-1.18.62 1.6.23 2.78.11 3.07.74.8 1.18 1.82 1.18 3.08 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.08.78 2.18v3.23c0 .3.21.66.79.55A10.502 10.502 0 0023.5 12c0-6.27-5.23-11.5-11.5-11.5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    
+      <div class="col-7">
+        <h1>Hello, I'm Nouhaila 👩‍💻</h1>
+        <p>Full-Stack Developer & Creative Engineer</p>
+        <div class="buttons">
+          <a [routerLink]="['/projects']" class="cta-button">View My Work</a>
+          <a [routerLink]="['/about']" class="secondary-button">Learn About Me</a>
+        </div>
+      </div>
+      <div class="col-4 text-center justify-content-end">
+        <img class="profile" src="/assets/profilePic.jpeg" alt="Nouhaila">
+      </div>
+    </div>
   </div>
 </section>
-

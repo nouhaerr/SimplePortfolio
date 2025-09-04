@@ -70,20 +70,20 @@
     align-items: center;
   }
   
-  /* Button group styling */
-  .button-group {
-    margin-bottom: 2rem;
-  }
-  
   .button-group button {
     background-color: #eee;
     border: none;
     padding: 0.7rem 1.5rem;
+    width: 45%;
     margin: 0 0.5rem;
     cursor: pointer;
     border-radius: 20px;
     transition: background-color 0.3s, color 0.3s;
     font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   
   .button-group button.active,
@@ -91,21 +91,15 @@
     background-color: #eacf46;
     color: #4f370d;
   }
-  
-  /* Timeline content */
+
   .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     width: 100%;
-    max-width: 800px; /* don't stretch too much on big screens */
-    padding: 1rem;
+    max-width: 800px;
   }
   
   /* Timeline items */
   .timeline-item {
     background: white;
-    padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     text-align: left;
@@ -130,7 +124,7 @@
     color: #555;
     font-size: 1rem;
   }
-  
+
   /* Responsive behavior */
   @media (max-width: 768px) {
     .timeline-item {
