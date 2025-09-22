@@ -5,8 +5,9 @@
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   color: white;
-  overflow: hidden;
-  min-height: calc(100vh - 100px); /* Ensures full viewport height, minus footer height */
+  /* overflow: hidden; */
+  /* min-height: calc(100vh - 100px); */
+  margin-bottom: 4rem;
 }
 
 @keyframes gradientBG {
@@ -72,17 +73,19 @@
   position: relative;
 }
 
+
 .skills-category {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: 12px;
   width: 300px;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  backdrop-filter: blur(8px);
+  /* backdrop-filter: blur(8px); */
 }
 
 .skills-category h2 {
+  text-align: center;
   margin-bottom: 1rem;
   font-size: 1.8rem;
   color: #eacf46;

@@ -1,74 +1,13 @@
-/* .timeline-container { */
-   /*min-height: 100vh; /*full screen height*/
-    /*background-color: #433f38; /* light elegant blue-gray */
-    /* padding: 2rem; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* max-width: 900px; */
-    /* margin: 0 auto; */
-    /* padding: 2rem;
-    text-align: center; */
-    /* background-color: #433f38; */
-  /* } */
-  
-  /* .button-group {
-    margin-bottom: 2rem;
-  } */
-  
-  /* .button-group button {
-    background-color: #eee;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    margin: 0 0.5rem;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: background-color 0.3s;
-    font-size: 1rem;
-  } */
-  
-  /* .button-group button.active,
-  .button-group button:hover {
-    background-color: #eacf46;
-    color: #4f370d;
-  } */
-  
-  /* .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: flex-start;
-  } */
-  
-  /* .timeline-item {
-    background: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    width: 100%;
-    text-align: left;
-  } */
-  
-  /* .timeline-item h3 {
-    margin-bottom: 0.5rem;
-    color: #333;
-  } */
-  
-  /* .timeline-item p {
-    margin: 0.3rem 0;
-    color: #555;
-  } */
-  
-/* Set background color for the whole page */
 .timeline-container {
-    min-height: 100vh; /* full screen height */
-    background-color: #433f38; /* light elegant blue-gray */
+  flex: 1;              /* take remaining space */
+    background-color: #433f38;
     padding: 2rem;
-    padding-right: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+    margin-bottom: 3rem !important;
+    min-height: calc(100vh - 4rem);
+}
   
   .button-group button {
     background-color: #eee;
@@ -137,4 +76,19 @@
       font-size: 0.9rem;
     }
   }
+
+  .timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* espace entre l'icône et le texte */
+    margin-bottom: 1rem;
+  }
+  
+  .company-logo {
+    width: 8%;
+    height: 8%;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+  
   

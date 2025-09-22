@@ -4,14 +4,13 @@
   background: linear-gradient(to right, #131415, #433f38, #645f55);
   animation: gradientBG 15s ease infinite;
   color: white;
-  /* padding: 20px; */
   display: flex;
   padding-top: 4rem;
+  padding-bottom: 6rem;
   flex-direction: column;
   /* align-items: center;
    */
-   align-items: flex-start; /* au lieu de center */
-
+  align-items: flex-start;
 }
 
 .landing .container-fluid {
@@ -34,6 +33,10 @@
   justify-content: flex-end;
   align-items: center;
   padding-right: 0;
+}
+
+.landing .col-1 {
+  align-self: flex-start;
 }
 
 .landing h1 {
@@ -120,13 +123,6 @@
   }
 }
 
-/* Keep your existing highlight class but make it work with gradient */
-.highlight {
-  color: inherit; /* This will inherit the gradient */
-  font-weight: 700;
-  position: relative;
-}
-
 .landing p {
   font-size: 2rem;
   margin-bottom: 3rem;
@@ -150,15 +146,18 @@
 }
 
 .social-buttons {
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  align-items: center;
+  transform: translateY(20px);
+  animation: fadeSlide 1.2s ease forwards;
+  animation-delay: 0.5s;
 }
 
 .profile {
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 8px 25px rgba(234, 207, 70, 0.3);

@@ -2,10 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: url('/assets/nav.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #d1d1cf;
+    /* background-image: url('/assets/nav.png'); */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
   padding: 1rem 2rem;
   color: white;
   position: relative;
